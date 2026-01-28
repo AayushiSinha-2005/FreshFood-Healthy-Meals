@@ -1,0 +1,487 @@
+/* --- BASIC SETUP --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html,body {
+     background-color: #fff;
+      color: #555; 
+      font-family: 'Lato', sans-serif; 
+      font-weight: 300;
+       font-size: 20px; 
+       text-rendering: optimizeLegibility; 
+       overflow-x: hidden;
+    }
+
+/* --- REUSABLE GRID --- */
+.row { max-width: 1140px; margin: 0 auto; }
+.row::after, .clearfix::after { content: ""; display: table; clear: both; }
+
+.span-1-of-2 { width: 48%; float: left; margin-right: 4%; }
+.span-1-of-4 { width: 23.5%; float: left; margin-right: 2%; }
+.row div:last-child { margin-right: 0; }
+
+/* --- HEADINGS --- */
+h1, h2, h3 { text-transform: uppercase; letter-spacing: 1px; }
+h1 {
+    font-size: 240%;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 400; /* 300 se 400 karein readability ke liye */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Halka sa shadow text ko image se alag karega */
+}h2 { font-size: 180%; text-align: center; margin-bottom: 20px; }
+h2::after {
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px; /* Orange line aur heading ke beech gap */
+}
+h3 {
+    margin-bottom: 15px;
+    text-transform: uppercase; /* Headings ko professional dikhane ke liye */
+    font-size: 90%;
+}
+
+/* --- HEADER --- */
+header {
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(img/Capture.webp);     
+    background-attachment: fixed;
+    background-size: cover; 
+    background-position: center; 
+    height: 100vh; 
+    background-attachment: fixed;
+    position: relative; 
+}
+.logo { height: 100px; width: auto; float: left; margin-top: 20px; border-radius: 50%; }
+.main-nav { float: right; list-style: none; margin-top: 55px; }
+.main-nav li { display: inline-block; margin-left: 40px; }
+.main-nav li a { color: #fff; text-decoration: none; font-size: 90%; border-bottom: 2px solid transparent; transition: 0.2s; padding: 8px 0; }
+.main-nav li a:hover { border-bottom: 2px solid #e67e22; }
+
+.hero-text-box { position: absolute; width: 1140px; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; }
+
+/* --- BUTTONS --- */
+.btn:link, .btn:visited, input[type=submit]{ display: inline-block; padding: 10px 30px; border-radius: 200px; text-decoration: none; transition: 0.2s; }
+.btn-full:link, .btn-full:visited, input[type=submit] { background-color: #e67e22; border: 1px solid #e67e22; color: #fff; margin-right: 15px; }
+.btn-ghost:link, .btn-ghost:visited { border: 1px solid #e67e22; color: #e67e22; }
+.btn:hover,.btn:active,input[type=submit]{ background-color: #cf6d17; border: 1px solid #cf6d17; color: #fff; }
+
+/* --- FEATURES --- */
+.section-features { padding: 80px 0; }
+.long-copy { line-height: 150%; width: 70%; margin: 0 auto 30px auto; text-align: center; }
+.icon-big {
+    font-size: 250%;
+    color: #e67e22;
+    margin-bottom: 15px;
+    display: inline-block; /* 'block' ki jagah 'inline-block' center hone mein help karta hai */
+}.box {
+    text-align: center; /* Ye box ke andar ki har cheez ko center kar dega */
+    padding: 1%;       /* Thoda internal space professional look ke liye */
+}
+.box p { font-size: 90%; line-height: 145%; }
+
+/* --- MEALS --- */
+.section-meals { padding: 0; width: 100%; }
+.meals-showcase { list-style: none; width: 100%; }
+.meals-showcase li { display: block; float: left; width: 25%; }
+.meal-photo { width: 100%; margin: 0; overflow: hidden; background-color: #000; }
+.meal-photo img { width: 100%; height: 250px; object-fit: cover; opacity: 0.7; transform: scale(1.15); transition: 0.5s; display: block; }
+.meal-photo img:hover { opacity: 1; transform: scale(1.03); }
+
+/* --- STEPS --- */
+.section-steps { padding: 80px 0; background-color: #f4f4f4; }
+.steps-box { margin-top: 30px; }
+.app-screen { width: 100%; float: right; box-shadow: 10px 10px 5px #aaaaaa; }
+.steps-box:last-child { padding-left: 3%; margin-top: 70px; }
+.works-step { margin-bottom: 50px; }
+.works-step div { color: #e67e22; border: 2px solid #e67e22; border-radius: 50%; height: 55px; width: 55px; text-align: center; float: left; font-size: 150%; margin-right: 25px; padding: 5px; }
+.works-step p { padding-top: 10px; }
+.btn-app img { height: 50px; width: auto; margin-right: 10px; }
+.btn-app:link,
+.btn-app:visited{
+    border: 0;
+}
+
+/* Cities */
+/* =========================================
+   7. CITIES SECTION
+   ========================================= */
+.section-cities {
+    padding: 80px 0;
+}
+
+.box img {
+    width: 100%;
+    height: 200px; /* Ek fixed height dena zaroori hai */   
+object-fit: cover; /* Isse image stretch nahi hogi, bas container mein fit ho jayegi */
+    margin-bottom: 15px;
+    display: block;
+}
+
+.city-features {
+    margin-bottom: 15px;
+    font-size: 90%; /* Text thoda compact dikhne ke liye */
+    display: flex;
+    align-items:center ;
+}
+
+.icon-small {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    color: #e67e22;
+    font-size: 120%;
+    line-height: 120%;
+    vertical-align: middle;
+    margin-top: -5px;
+    margin-right: 10px;
+}
+.city-features .icon-small {
+    color: #e67e22;
+    font-size: 120%;
+    margin-right: 15px;  /* Icon aur text ke beech thoda gap */
+    width: 25px;         /* Sare icons ki width fix taaki text ek hi line se start ho */
+    text-align: center;
+    /* Purana vertical-align ya margin-top hata dein */
+    margin-top: 0; 
+}
+
+/* Specific styling for city links (Twitter handle) */
+.city-features a:link, 
+.city-features a:visited {
+    color: #e67e22;
+    text-decoration: none;
+    border-bottom: 1px solid #e67e22;
+    padding-bottom: 1px;
+    transition: 0.2s;
+}
+
+.city-features a:hover, 
+.city-features a:active {
+    color: #555;
+    border-bottom: 1px solid transparent;
+}
+
+/* =========================================
+   10. TESTIMONIALS SECTION
+   ========================================= */
+.section-testimonials {
+    background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(img/Supreme_pizza.jpg);
+    background-size: cover;
+    color: #fff;
+    background-attachment: fixed;
+    padding: 80px 0; /* Padding zaroori hai professional look ke liye */
+}
+
+blockquote {
+    padding: 2%;
+    font-style: italic;
+    line-height: 145%;
+    position: relative;
+    margin-top: 40px;
+}
+
+/* Quote marks ko professional banane ke liye */
+blockquote::before {
+    content: "\201C"; /* Left Double Quote */
+    display: block;
+    font-size: 500%;
+    font-family: Arial, sans-serif;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    color: rgba(255, 255, 255, 0.3); /* Isse quote mark halka aur premium dikhega */
+}
+
+cite {
+    font-size: 90%;
+    display: block;
+    margin-top: 25px;
+    font-style: normal; /* Name italic nahi hona chahiye */
+}
+
+cite img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    vertical-align: middle;
+    border: 2px solid #e67e22; /* Chota sa orange border face par focus layega */
+}
+
+/* Grid fix for Testimonials - Alignment Fix */
+.span-1-of-3 {
+    width: 31.3%;
+    float: left;
+    margin-left: 3%;
+}
+
+.span-1-of-3:first-child { margin-left: 0; }
+
+/* =========================================
+   11. PRICING SECTION
+   ========================================= */
+.section-plans{
+    background-color: #f4f4f4;
+    padding: 80px 0;
+}
+.plan-box {
+    background-color: #fff;
+    border-radius: 5px;
+    width: 90%;
+    margin-left: 5%;
+    box-shadow: 0 2px 2px #efefef;
+    /* Sab boxes ki height barabar karne ke liye niche wala line add karein */
+    min-height: 440px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.plan-box div{
+    padding: 15px;
+    border-bottom: 1px solid #e8e8e8;
+}
+/* Baki aapka code ekdum sahi hai... */
+.plan-price{
+    font-size: 300%;
+    margin-bottom: 10px;
+    font-weight: 300;
+    color: #e67e22;
+}
+.plan-price-meal{
+    font-size: 80%;
+    margin-bottom: 10px;
+}
+.plan-price span{
+    font-size: 30%;
+    font-weight: 500;
+}
+.plan-box ul{
+    list-style: none;
+}
+.plan-box ul li{
+    padding: 5px 0;
+    display: flex; /* Icon aur text ko line mein lane ke liye */
+    align-items: center;
+}
+.icon-small{
+    color: #e67e22;
+    margin-right: 10px;
+    font-size: 120%;
+}
+.plan-box div:last-child{
+    border: 0;
+    text-align: center;
+}
+.plan-box div:first-child{
+    background-color: #fcfcfc;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+/* Contact Form */
+.section-form{
+    padding: 80px 0;
+    background-color: #fdfdfd; /* Thoda off-white background professional lagta hai */
+}
+.contact-form{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.label-boxes{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.submit-button1{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+
+}
+.contact-form .row{
+    margin-bottom: 25px; /* Sabse important spacing fix */
+    display: flex;
+    align-items: flex-start; /* Label aur input top se align rahenge */
+}
+/* Column sizes ko stretch karein */
+.contact-form .span-1-of-3 {
+    width: 30%; /* Label wala part */
+}
+
+.contact-form .span-2-of-3 {
+    width: 70%; /* Input wala part ab extend ho jayega */
+}
+/* Form labels aur inputs ke beech spacing */
+.row .col {
+    padding: 5px 0;
+}
+.contact-form .row:last-child {
+    margin-bottom: 0;
+}
+
+/* Label styling */
+label {
+    font-size: 95%;
+    padding-top: 5px; /* Label ko input ke center align karne ke liye */
+    font-weight: 400;
+    color: #555;
+}
+input[type=text],input[type=email],
+select,textarea{
+    width: 100%;
+    padding: 12px; /* Uniform padding */
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-family: inherit; /* Taaki font alag na lage */
+    transition: border 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+/* Submit row ko extra space dene ke liye */
+.contact-form .row:last-of-type {
+    margin-top: 30px;
+}
+textarea{
+    height: 120px;
+    resize: vertical;
+}
+/* Checkbox alignment */
+input[type=checkbox]{
+    margin: 10px 5px 10px 0;
+}
+/* Professional touch: Jab user click kare toh border orange ho jaye */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border: 1px solid #e67e22;
+    box-shadow: 0 0 5px rgba(230, 126, 34, 0.2);
+}
+/* Submit Button ko professional banayein */
+input[type=submit] {
+    background-color: #e67e22;
+    color: #fff;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 200px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;}
+
+input[type=submit]:hover{
+    background-color: #cf6d17;
+}
+
+/* Footer section */
+footer{
+    background-color: #333;
+    font-size: 80%; 
+    padding: 50px 0;
+}
+.footer-nav{
+    list-style: none;
+    float: left;
+
+}
+.social-links{
+    list-style: none;
+    float: right;
+}
+.footer-nav li,
+.social-links li{
+    display: inline-block;
+    margin-right: 20px;
+}
+.footer-nav li:last-child,
+.social-links li:last-child {
+    margin-right: 0;
+}
+/* Links Styling */
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited{
+    text-decoration: none;
+    border: 0;
+    color: #888;
+transition: transform 0.3s, color 0.3s;}
+.footer-nav li a:hover,
+.footer-nav li a:hover{
+    color: #ddd;
+}
+footer p{
+    color: #888;
+    text-align: center;
+    margin-top: 50px;
+}
+/* Icons Specific Styling */
+.social-links li ion-icon {
+    font-size: 130%;
+    color: #888; /* Default color */
+    transition: color 0.2s;
+    cursor: pointer;
+}
+/* Social Media Hover Colors */
+.fb:hover{
+    color: #3b5998;
+}
+.google:hover{
+    color: #dd4b39;
+}
+.twitter:hover{
+    color: #00aced;
+}
+.insta:hover{
+    color: #517fa4;
+}
+.social-links li a:link,
+.social-links li a:visited {
+    font-size: 150%; /* Icons thode bade */
+    color: #ccc; /* Pehle se light gray (better contrast than #888) */
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-links li a:hover {
+    transform: scale(1.2); /* Hover par icon thoda bada hoga */
+}
+
+/* Footer alignment fix */
+footer .row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
