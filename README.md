@@ -10,6 +10,9 @@ The project focuses on clean UI, smooth animations, and user-friendly navigation
 - AOS (Animate on Scroll) – Scroll animations
 - Ionicons – Icons and UI enhancement
 
+# Screenshot 
+<img src="resources/img/ss.png">
+
 # Features
 - Responsive and mobile-friendly design
 - Smooth scrolling navigation
